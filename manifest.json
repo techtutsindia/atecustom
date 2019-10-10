@@ -1,0 +1,111 @@
+{
+	"_version": "1.0.0",
+	"sap.app": {
+		"id": "sit.mng.mtng",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+			"mainService": {
+				"uri": "/atnmcustom/proxy/sap/opu/odata/sap/ZCDS_HRV_EMPSS_CDS",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": ""
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sit.mng.mtng.view.Main",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {
+					
+				},
+				"sap.m": {
+					
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sit.mng.mtng.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.ODataModel",
+				"dataSource": "mainService"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sit.mng.mtng.view",
+				"controlId": "fioriContent",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"notFound"
+					]
+				},
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "S1",
+					"target": "S1"
+				}
+			],
+			"targets": {
+				"S1": {
+					"viewName": "S1",
+					"viewId": "S1",
+					"viewLevel": 1
+				}
+			}
+		}
+	}
+}

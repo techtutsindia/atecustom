@@ -1,0 +1,63 @@
+
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZCONFROOMBOOKING_SRV" xml:lang="en" sap:schema-version="1">
+<EntityType Name="GeoLocation" sap:content-version="1">
+<Key>
+<PropertyRef Name="Location"/>
+<PropertyRef Name="Building"/>
+<PropertyRef Name="Confroom"/>
+</Key>
+<Property Name="Location" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Building" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Building" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Confroom" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Conference Room" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="State" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="Reservation" sap:content-version="1">
+<Key>
+<PropertyRef Name="Meetingid"/>
+<PropertyRef Name="Startdate"/>
+<PropertyRef Name="Enddate"/>
+<PropertyRef Name="Starttime"/>
+<PropertyRef Name="Endtime"/>
+<PropertyRef Name="Userid"/>
+<PropertyRef Name="Location"/>
+<PropertyRef Name="Building"/>
+<PropertyRef Name="Confroom"/>
+</Key>
+<Property Name="Alldayevent" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Contactnum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Meetingid" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Counter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Startdate" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Enddate" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Starttime" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Endtime" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Character 100" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Createdate" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Location" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Building" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Confroom" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char20" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityContainer Name="ZCONFROOMBOOKING_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+<EntitySet Name="GeoLocationSet" EntityType="ZCONFROOMBOOKING_SRV.GeoLocation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="ReservationSet" EntityType="ZCONFROOMBOOKING_SRV.Reservation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<FunctionImport Name="CheckRoomAvailability" ReturnType="ZCONFROOMBOOKING_SRV.Reservation" EntitySet="ReservationSet" m:HttpMethod="GET">
+<Parameter Name="startdate" Type="Edm.String" Mode="In" MaxLength="8"/>
+<Parameter Name="confroom" Type="Edm.String" Mode="In" MaxLength="20"/>
+<Parameter Name="building" Type="Edm.String" Mode="In" MaxLength="20"/>
+<Parameter Name="location" Type="Edm.String" Mode="In" MaxLength="20"/>
+<Parameter Name="endtime" Type="Edm.String" Mode="In" MaxLength="6"/>
+<Parameter Name="starttime" Type="Edm.String" Mode="In" MaxLength="6"/>
+<Parameter Name="enddate" Type="Edm.String" Mode="In" MaxLength="8"/>
+</FunctionImport>
+</EntityContainer>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://10.6.12.113:8000/sap/opu/odata/sap/ZCONFROOMBOOKING_SRV/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://10.6.12.113:8000/sap/opu/odata/sap/ZCONFROOMBOOKING_SRV/$metadata"/>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,116 @@
+
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" 	xmlns:unified="sap.ui.unified"
+	controllerName="sit.mng.mtng.controller.S1" xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:tnt="sap.tnt"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" >
+<App id="fioriContent">
+<Page title="ATNM Demo Reports" id="pageId" showSubHeader="false"
+		showNavButton="false" navButtonPress="navPress">
+		
+<content>
+			<!-- <Bar>
+				<contentMiddle>
+					<Button id="idBtnTable" icon="sap-icon://table-chart" type="Emphasized" press="onPressTable" width="175px"/>
+					<Button id="idBtnChart" icon="sap-icon://bar-chart" type="Default" press="onPressChart" width="175px"/>
+				</contentMiddle>
+			</Bar> -->
+	 <tnt:ToolHeader>		
+		<SearchField search="handleChangeSearch" width="1200px">
+		<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" />
+			</layoutData>
+		</SearchField>
+		<Button id="idBtnTable" icon="sap-icon://table-chart" type="Emphasized" press="onPressTable">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" />
+			</layoutData>
+		</Button>
+		<Button id="idBtnChart" icon="sap-icon://bar-chart" type="Transparent" press="onPressChart">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" />
+			</layoutData>
+		</Button>
+	</tnt:ToolHeader> 
+
+	<Table id="idProductsTable"	inset="false" growing="true" growingThreshold="30" growingScrollToLoad="false"
+		items="{TableSetModel>/Tableset}">
+			<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Table Data" level="H2"/>
+					<ToolbarSpacer />
+					<!-- <Button id="idBtnTable" icon="sap-icon://table-chart" type="Emphasized" press="onPressTable"/>
+					<Button id="idBtnChart" icon="sap-icon://bar-chart" press="onPressChart"/> -->
+					
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column><Text text="btext"/></Column>
+			<Column><Text text="ABSC"/></Column>
+			<Column><Text text="EATW"/></Column>
+			<Column><Text text="ENATW"/></Column>
+			<Column><Text text="STATA"/></Column>
+			<Column><Text text="btrtl"/></Column>
+			<Column><Text text="calyear"/></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>		
+					<Text text="{TableSetModel>btext}" />			
+					<Text text="{TableSetModel>ABSC}" />
+					<Text text="{TableSetModel>EATW}" />
+					<Text text="{TableSetModel>ENATW}" />
+					<Text text="{TableSetModel>STATA}" />					
+					<Text text="{TableSetModel>btrtl}" />
+					<Text text="{TableSetModel>calyear}" />
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+	<!-- Column Chart -->
+		<viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='column' title="Column Chart" visible="false">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{TableSetModel>/Tableset}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="btext"
+                                value="{TableSetModel>btext}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="EATW"
+                                value="{TableSetModel>EATW}" />
+                            <viz.data:MeasureDefinition name="STATA"
+                                value="{TableSetModel>STATA}" />
+                                <viz.data:MeasureDefinition name="STATI"
+                                value="{TableSetModel>STATI}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="EATW" />
+                        <viz.feeds:FeedItem id='valueAxisFeed1' uid="valueAxis" type="Measure"
+                        values="STATA" />
+                        <viz.feeds:FeedItem id='valueAxisFeed2' uid="valueAxis" type="Measure"
+                        values="STATI" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed3' uid="categoryAxis" type="Dimension"
+                        values="btext" />
+                </viz:feeds>
+		</viz:VizFrame>
+
+</content>
+
+<footer>
+	<Toolbar>
+		<ToolbarSpacer/>
+					
+	</Toolbar>
+</footer>
+</Page>
+  </App>
+</core:View>

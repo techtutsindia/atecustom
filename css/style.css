@@ -1,0 +1,260 @@
+.columnAlignment .sapMTextBreakWord {
+    word-break: keep-all !important;
+}
+
+.columnAlignment .sapMTB-Transparent-CTX>.sapMTitleTB.sapMTitleStyleAuto {
+    font-size: 0.8rem !important;
+}
+
+.columnAlignment .sapMTitle {
+        text-overflow: initial !important;
+}
+
+.titleAdjust .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 3rem;
+}
+
+.Planingstyle{
+    display: table-cell;
+    vertical-align: center;
+}
+/* .customHeaderStyle {
+  background-color: none;
+  filter: none;
+  background-image: none;
+}
+.headerText {
+  color:#004040!important;
+  font-size: 1rem !important;
+  text-shadow: 1px 1px 2px #c0c0c0!important;
+  font-family:arial !important;
+  font-weight: bold !important;
+} */
+/*.sap-desktop .sapMIBar.sapMHeader-CTX {
+ This is custom header class in sap UI5 by default.
+ We can change the color and other things exist in our custom header. 
+}*/
+
+/*  .loginViewClass{
+	background-image: url("https://www.colorhexa.com/e5edcd.png");
+}
+
+
+.simpleform{
+	background-color: #DEE8BF ;
+	position: relative;
+}
+.S1ViewClass{
+	background-image: url("https://www.colorhexa.com/e5edcd.png");
+} */
+.tabBar {
+	background-color: #DEE8BF ;
+	position: relative;
+}
+/* .btnLogin{
+	 background-color: #DEE8BF;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    color: Black; 
+    width: 100%;
+    border-radius: 9px;
+} */
+
+
+.updateInfoButton .sapMBtnContent {
+	 background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    color: white; 
+    width: 100%;
+    border-radius: 9px;
+    font-weight: bold;
+
+}
+.updateInfoButton .sapMBtnContent:hover{
+	background-color:Transparent ;
+    color:  black;     
+font-weight: bold;
+}
+
+
+.cancleInfoButton .sapMBtnContent {
+     background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    color: white; 
+    width: 100%;
+    border-radius: 9px;
+    font-weight: bold;
+}
+.cancleInfoButton .sapMBtnContent:hover{
+
+    background-color:Transparent ;
+    color:  black;
+    border: none;
+    font-weight: bold;
+}
+
+.checkAvailability .sapMBtnContent {
+	 background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    color: white; 
+    width: 100%;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.checkAvailability .sapMBtnContent :hover{
+
+    background-color:Transparent ;
+    color:  black;
+    border: none;
+    font-weight: bold;
+}
+
+.bookButton .sapMBtnContent {
+	 background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    color: white; 
+    width: 100%;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.bookButton .sapMBtnContent :hover{
+
+     background-color:Transparent ;
+    color:  black;
+    border: none;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/*background-color: #408080!important;
+
+  border-color: #0000ff!important;
+
+  background-image: none !important;
+*/
+/* background-color: white;
+    color: green;
+    border:  2px solid #008CBA;
+  text-shadow: none !important;
+border-radius: 10px;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); */
+
+
+
+/* h2{
+ background-color: #FEFFED;
+ padding: 30px 35px;
+ margin: -10px -50px;
+ text-align:center;
+ border-radius: 10px 10px 0 0;
+}
+ 
+hr{
+ margin: 10px -50px;
+ border: 0;
+ border-top: 1px solid #ccc;
+ margin-bottom: 40px;
+}
+ 
+div.container{
+ width: 900px;
+ height: 610px;
+ margin:35px auto;
+ font-family: 'Raleway', sans-serif;
+}
+ 
+div.main{
+ width: 300px;
+ padding: 10px 50px 25px;
+ border: 2px solid gray;
+ border-radius: 10px;
+ font-family: raleway;
+ float:left;
+ margin-top:90px;
+ margin-left: 15rem;
+}
+ 
+input[type=text],input[type=password]{
+ width: 100%;
+ height: 40px;
+ padding: 5px;
+ margin-bottom: 25px;
+ margin-top: 5px;
+ border: 2px solid #ccc;
+ color: #4f4f4f;
+ font-size: 16px;
+ border-radius: 5px;
+}
+
+label{
+ color: #464646;
+ text-shadow: 0 1px 0 #fff;
+ font-size: 14px;
+ font-weight: bold;
+}
+
+center{
+ font-size:32px;
+}
+
+.note{
+ color:red;
+}
+ 
+.valid{
+ color:green;
+}
+
+.back{
+ text-decoration: none;
+ border: 1px solid rgb(0, 143, 255);
+ background-color: rgb(0, 214, 255);
+ padding: 3px 20px;
+ border-radius: 2px;
+ color: black;
+}
+ 
+input[type=button]{
+ font-size: 16px;
+ background: linear-gradient(#ffbc00 5%, #ffdd7f 100%);
+ border: 1px solid #e5a900;
+ color: #4E4D4B;
+ font-weight: bold;
+ cursor: pointer;
+ width: 100%;
+ border-radius: 5px;
+ padding: 10px 0;
+ outline:none;
+}
+ 
+input[type=button]:hover{
+ background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
+}
+
+.fugo{
+ float:right;
+} */
+
+
+
+
